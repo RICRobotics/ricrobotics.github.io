@@ -8,6 +8,7 @@
             font-size: 16px;
             background-color: white;
             color: black;
+	    line-height:.5;
         }
         
         .title {
@@ -18,6 +19,28 @@
 </head>
 <body>
     <div class="title">RIC Robotics - Est. 2025</div>
-    <p>Contact: jnellis_6647@email.ric.edu</p>
+    <p>Meeting Schedule: TBD</p>
+    <p>President: James Nellis</p>
+    <p>Vice-President: TBD</p>
+    <p>Treasurer: TBD</p>
+    <p>Secretary: TBD</p>
+    <p>&nbsp;</p>
+    <p>Contact: jnellis_6647@email.ric.edu
+    <span id="copyButton" onclick="copyEmail()" style="
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-left: 8px;
+    ">copy</span> </p>
+    <script>
+        function copyEmail() {
+            navigator.clipboard.writeText('jnellis_6647@email.ric.edu');
+            const button = document.getElementById('copyButton');
+            button.textContent = 'copied';
+            setTimeout(() => {
+                button.textContent = 'copy';
+            }, 1250);
+        }
+    </script>
 </body>
 </html>
