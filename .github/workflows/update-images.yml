@@ -1,0 +1,31 @@
+name: Update Images Index
+on:
+  push:
+    paths:
+      - 'images/**'
+
+jobs:
+  update-index:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Generate images index
+        run: |
+          cd images
+          echo '<!DOCTYPE html>' > index.html
+          echo '<html><body>' >> index.html
+          for file in *; do
+            if [ "$file" != "index.html" ]; then
+              echo "<a href=\"$file\">$file</a><br>" >> index.html
+            fi
+          done
+          echo '</body></html>' >> index.html
+          
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add images/index.html
+          git diff --staged --quiet || git commit -m "Auto-update images index"
+          git push
