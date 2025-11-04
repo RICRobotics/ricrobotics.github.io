@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Downloading PDF...</title>
+    <script>
+        // Trigger download immediately
+        window.onload = function() {
+            const link = document.createElement('a');
+            link.href = 'basicsofelectricalandelectronicsengineeringlectureslides-241110220142-daf23217.pdf';
+            link.download = 'basicsofelectricalandelectronicsengineeringlectureslides-241110220142-daf23217.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        };
+    </script>
+</head>
+<body>
+    <p>Your download should begin automatically. If it doesn't, <a href="basicsofelectricalandelectronicsengineeringlectureslides-241110220142-daf23217.pdf" download>click here</a>.</p>
+</body>
+</html>
