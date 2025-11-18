@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download buttonLED.ino</title>
+</head>
+<body>
+    <p>Downloading buttonLED.ino...</p>
+    <script>
+        // Automatically trigger download
+        window.onload = function() {
+            const link = document.createElement('a');
+            link.href = '../buttonLED.ino';
+            link.download = 'buttonLED.ino';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        };
+    </script>
+    <p>If the download doesn't start automatically, <a href="../buttonLED.ino" download="buttonLED.ino">click here</a>.</p>
+</body>
+</html>
